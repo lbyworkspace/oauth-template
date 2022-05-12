@@ -1,6 +1,6 @@
 package com.lby.template.entity;
 
-import com.lby.template.enums.RoleEnum;
+import com.lby.template.config.jpa.ListConvertJson;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -9,6 +9,7 @@ import org.hibernate.annotations.ColumnDefault;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name = "user")
@@ -32,9 +33,9 @@ public class SystemUser extends BaseEntity<Long> implements Serializable {
     @Column(name = "is_normal",nullable = false)
     private boolean isNormal;
 
-    @Enumerated(EnumType.STRING)
+    @Convert(converter = ListConvertJson.class)
     @Column(name = "role",nullable = false)
-    private RoleEnum role;
+    private List<String> roles;
 
     @Column(name = "avatar_url")
     private String avatarUrl;

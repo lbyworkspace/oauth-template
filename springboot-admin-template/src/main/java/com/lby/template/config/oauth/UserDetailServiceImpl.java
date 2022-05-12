@@ -36,7 +36,9 @@ public class UserDetailServiceImpl implements UserDetailsService {
         boolean accountNonLocked = true; // 锁定性 :true:未锁定 false:已锁定
 
         Set<GrantedAuthority> authorities = new HashSet<>();
-        authorities.add(new SimpleGrantedAuthority(res.getRole().getName()));
+        for (String role : res.getRoles()) {
+            authorities.add(new SimpleGrantedAuthority(role));
+        }
 
         Map<String, Object> info = new HashMap<>();
 

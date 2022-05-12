@@ -18,10 +18,10 @@
 
       </template>
 
-      <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
+      <el-dropdown class="avatar-container right-menu-item hover-effect">
         <div class="avatar-wrapper">
-          <img :src="avatar+'?imageView2/1/w/80/h/80'" class="user-avatar">
-          <i class="el-icon-caret-bottom" />
+          <img :src="avatar?avatar:'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'+'?imageView2/1/w/80/h/80'" class="user-avatar">
+          <!-- <i class="el-icon-caret-bottom" /> -->
         </div>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item @click.native="$router.push('/user/account')">账号管理</el-dropdown-item>
@@ -136,13 +136,13 @@ export default {
         transition: background .3s;
 
         &:hover {
-          background: rgba(0, 0, 0, .025)
+          // background: rgba(0, 0, 0, .025)
         }
       }
     }
 
     .avatar-container {
-      margin-right: 30px;
+      margin-right: 10px;
 
       .avatar-wrapper {
         margin-top: 5px;
@@ -152,7 +152,7 @@ export default {
           cursor: pointer;
           width: 40px;
           height: 40px;
-          border-radius: 10px;
+          border-radius: 6px;
         }
 
         .el-icon-caret-bottom {

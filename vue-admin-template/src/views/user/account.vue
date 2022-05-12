@@ -1,6 +1,6 @@
 <template>
     <div class="wrap">
-        account
+        <el-button type="primary">111</el-button>
     </div>
 </template>
 

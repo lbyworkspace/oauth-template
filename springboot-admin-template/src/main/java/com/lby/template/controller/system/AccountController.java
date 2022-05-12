@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/system")
-public class SystemController {
+public class AccountController {
 
     @GetMapping("/getInfo")
     public ResponseEntity getInfo(@RequestParam String token){

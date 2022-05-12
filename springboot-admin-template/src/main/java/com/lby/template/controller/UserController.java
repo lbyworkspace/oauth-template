@@ -32,7 +32,7 @@ public class UserController {
     @GetMapping("/add")
     public ResponseEntity<String> register(){
         userService.register(SystemUser.builder().username("111").password(new BCryptPasswordEncoder().encode("111"))
-                .role(RoleEnum.USER).build());
+                .build());
         return ResponseEntity.ok("ok");
     }
 

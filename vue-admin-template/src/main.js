@@ -33,6 +33,7 @@ Vue.config.productionTip = false
 
 
 console.log(`当前为: ${process.env.NODE_ENV=="development"?'开发':'生产'}环境 , Api的请求主机地址为: ${process.env.VUE_APP_BASEURL}`)
+
 export default new Vue({
   router,
   store,

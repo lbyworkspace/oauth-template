@@ -88,8 +88,7 @@ export default {
         transform: translate(-50%,-50%);
         width: 360px;
         border-radius: 4px;
-        height: 290px;
-        padding: 35px 40px 50px;
+        padding: 20px 40px;
         .title{
             font-size: 26px;
             color: #444;

@@ -1,13 +1,14 @@
 import Layout from '@/layout'
 
 export default {
+    order:1,
     path:'/user',
     component:Layout,
     name:'User',
     redirect: 'noRedirect',
     meta: {
       title: '用户管理',
-      icon: 'chart'
+      icon: 'user'
     },
     children: [
         {

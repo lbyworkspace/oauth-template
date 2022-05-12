@@ -1,13 +1,14 @@
 import Layout from '@/layout'
 
 export default {
+    order:2,
     path:'/system',
     component:Layout,
     name:'SystemManage',
     redirect: 'noRedirect',
     meta: {
       title: '系统管理',
-      icon: 'el-icon-setting',
+      icon: 'setting',
     },
     children: [
         {
