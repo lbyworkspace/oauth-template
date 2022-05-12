@@ -11,15 +11,17 @@ import lombok.ToString;
 @ToString
 public enum RoleEnum {
 
-
-    ADMIN("ADMIN"),
-    USER("USER")
+    SADMIN("超级管理员","SADMIN"),
+    ADMIN("管理员","ADMIN"),
+    USER("用户","USER")
 
     ;
 
     private String name;
+    private String value;
 
-    RoleEnum(String name) {
+    RoleEnum(String name,String value) {
         this.name = name;
+        this.value = value;
     }
 }

@@ -19,9 +19,9 @@
       </template>
 
       <el-dropdown class="avatar-container right-menu-item hover-effect">
-        <div class="avatar-wrapper">
-          <img :src="avatar?avatar:'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'+'?imageView2/1/w/80/h/80'" class="user-avatar">
-          <!-- <i class="el-icon-caret-bottom" /> -->
+        <div class="avatar-wrapper df aic">
+          <img :src="avatar?avatar:'https://cube.elemecdn.com/3/7c/3ea6beec64369c2642b92c6726f1epng.png'" class="user-avatar">
+          <span>{{name}}</span>
         </div>
         <el-dropdown-menu slot="dropdown">
           <el-dropdown-item @click.native="$router.push('/user/account')">账号管理</el-dropdown-item>
@@ -56,13 +56,11 @@ export default {
     ...mapGetters([
       'sidebar',
       'avatar',
-      'device'
+      'device',
+      'name'
     ])
   },
   methods: {
-    test(){
-      console.log(11)
-    },
     toggleSideBar() {
       this.$store.dispatch('app/toggleSideBar')
     },
@@ -145,22 +143,17 @@ export default {
       margin-right: 10px;
 
       .avatar-wrapper {
-        margin-top: 5px;
         position: relative;
 
         .user-avatar {
           cursor: pointer;
-          width: 40px;
-          height: 40px;
-          border-radius: 6px;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
         }
-
-        .el-icon-caret-bottom {
-          cursor: pointer;
-          position: absolute;
-          right: -20px;
-          top: 25px;
-          font-size: 12px;
+        span{
+          font-size: 15px;
+          margin-left: 10px;
         }
       }
     }

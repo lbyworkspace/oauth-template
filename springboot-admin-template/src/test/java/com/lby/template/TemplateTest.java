@@ -30,9 +30,9 @@ public class TemplateTest {
     @Test
     public void test(){
         userService.register(SystemUser.builder()
-                .username("admin")
-                .password(passwordEncoder.encode("admin"))
-                .roles(Arrays.asList(RoleEnum.ADMIN.getName(),RoleEnum.USER.getName()))
+                .username("111")
+                .password(passwordEncoder.encode("111"))
+                .roles(Arrays.asList(RoleEnum.SADMIN))
                 .realName("赖宝元")
                 .isNormal(true).build());
     }

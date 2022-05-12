@@ -2,6 +2,7 @@ package com.lby.template.config.oauth;
 
 import com.lby.template.dao.SystemUserDao;
 import com.lby.template.entity.SystemUser;
+import com.lby.template.enums.RoleEnum;
 import com.lby.template.vo.UserDetailVo;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -36,8 +37,8 @@ public class UserDetailServiceImpl implements UserDetailsService {
         boolean accountNonLocked = true; // 锁定性 :true:未锁定 false:已锁定
 
         Set<GrantedAuthority> authorities = new HashSet<>();
-        for (String role : res.getRoles()) {
-            authorities.add(new SimpleGrantedAuthority(role));
+        for (RoleEnum role : res.getRoles()) {
+            authorities.add(new SimpleGrantedAuthority(role.getValue()));
         }
 
         Map<String, Object> info = new HashMap<>();

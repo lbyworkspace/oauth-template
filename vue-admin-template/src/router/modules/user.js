@@ -8,7 +8,8 @@ export default {
     redirect: 'noRedirect',
     meta: {
       title: '用户管理',
-      icon: 'user'
+      icon: 'user',
+      roles:['SUPER']
     },
     children: [
         {

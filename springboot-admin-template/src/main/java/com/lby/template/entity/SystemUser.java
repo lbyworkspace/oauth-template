@@ -1,6 +1,7 @@
 package com.lby.template.entity;
 
 import com.lby.template.config.jpa.ListConvertJson;
+import com.lby.template.enums.RoleEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -35,7 +36,7 @@ public class SystemUser extends BaseEntity<Long> implements Serializable {
 
     @Convert(converter = ListConvertJson.class)
     @Column(name = "role",nullable = false)
-    private List<String> roles;
+    private List<RoleEnum> roles;
 
     @Column(name = "avatar_url")
     private String avatarUrl;
