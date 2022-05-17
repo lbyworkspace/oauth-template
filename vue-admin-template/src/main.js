@@ -18,7 +18,7 @@ import * as filters from './filters' // global filters
 
 Vue.use(moment)
 Vue.prototype.$moment = moment
-Vue.use(apis)
+Vue.prototype.$apis = apis
 
 Vue.use(Element, {
   size: Cookies.get('size') || 'medium' // set element-ui default size
@@ -39,3 +39,4 @@ export default new Vue({
   store,
   render: h => h(App)
 }).$mount('#app')
+

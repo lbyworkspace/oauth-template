@@ -10,6 +10,11 @@ export default {
         return{
 
         }
+    },
+    created(){
+        this.$apis.getAllUser().then(res=>{
+            console.log(res)
+        })
     }
 }
 </script>

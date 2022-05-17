@@ -1,6 +1,6 @@
 import { getToken, setToken, removeToken } from '@/utils/auth'
 import router, { resetRouter } from '@/router'
-import Vue from 'vue'
+import user from '@/apis/modules/user'
 
 const state = {
   token: getToken(),
@@ -29,8 +29,7 @@ const actions = {
   login({ commit }, userInfo) {
     const { username, password } = userInfo
     return new Promise((resolve, reject) => {
-      console.log(Vue.prototype)
-      Vue.prototype.$api_user.login(username.trim(),password).then(res => {
+      user.login(username.trim(),password).then(res => {
         commit('SET_TOKEN', res.access_token)
         setToken(res.access_token)
         resolve()
@@ -44,7 +43,7 @@ const actions = {
   getInfo({ commit, state }) {
     return new Promise((resolve, reject) => {
       const token = getToken()
-      Vue.prototype.$api_user.getInfo(token).then(res=>{
+      user.getInfo(token).then(res=>{
         const { nickName, avatarUrl, roles } = res
         commit('SET_ROLES', roles)
         commit('SET_NAME', nickName)

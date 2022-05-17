@@ -2,7 +2,6 @@ package com.lby.template.controller;
 
 import com.lby.template.dao.SystemUserDao;
 import com.lby.template.entity.SystemUser;
-import com.lby.template.enums.RoleEnum;
 import com.lby.template.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;

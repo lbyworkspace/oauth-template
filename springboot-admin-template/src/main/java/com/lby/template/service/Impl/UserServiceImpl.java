@@ -6,6 +6,7 @@ import com.lby.template.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -16,6 +17,11 @@ public class UserServiceImpl implements UserService {
     @Override
     public void register(SystemUser user) {
         userDao.save(user);
+    }
+
+    @Override
+    public List<SystemUser> getAllUser() {
+        return userDao.findAll();
     }
 
 
